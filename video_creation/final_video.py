@@ -86,10 +86,10 @@ def name_normalize(name: str) -> str:
     
 def prepare_background(reddit_id: str, W: int, H: int) -> str:
     if settings.config["settings"]["render_device"] == "gpu":
-        if settings.config["settings"]["video_encoder"] == "qsv":
+        if settings.config["settings"]["video_codec"] == "qsv":
             render_device = "h264_qsv"
             print("Attempting to use QSV...")
-        elif settings.config["settings"]["video_encoder"] == "nvenc":
+        elif settings.config["settings"]["video_codec"] == "nvenc":
             render_device = "h264_nvenc"  # Use NVIDIA GPU encoding
             print("Attempting to use NVENC...")
     else:
@@ -222,9 +222,9 @@ def make_final_video(
     )
 
     if settings.config["settings"]["render_device"] == "gpu":
-        if settings.config["settings"]["video_encoder"] == "qsv":
+        if settings.config["settings"]["video_codec"] == "qsv":
             render_device = "h264_qsv"
-        elif settings.config["settings"]["video_encoder"] == "nvenc":
+        elif settings.config["settings"]["video_codec"] == "nvenc":
             render_device = "h264_nvenc"
         
     else:
