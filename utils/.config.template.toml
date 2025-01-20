@@ -27,6 +27,7 @@ ai_similarity_keywords = {optional = true, type="str", example= 'Elon Musk, Twit
 
 [settings]
 render_device = { optional = false, default = "cpu", example = "gpu", explanation = "Change the rendering device for faster render (Support only nvidia cards. Must have CUDA Toolkit installed)" }
+video_codec = { optional = true, default = "nvenc", example = "qsv or nvenc", options = ["qsv", "nvenc",], explanation = "Sets the GPU encoder type depending on graphics card." }
 capcut_captions = { optional = true, type = "bool", default = false, example = true, options = [true, false, ], explanation = "Use capcut to generate subtitles" }
 allow_nsfw = { optional = false, type = "bool", default = false, example = false, options = [true, false, ], explanation = "Whether to allow NSFW content, True or False" }
 theme = { optional = false, default = "dark", example = "light", options = ["dark", "light", "transparent", ], explanation = "Sets the Reddit theme, either LIGHT or DARK. For story mode you can also use a transparent background." }
