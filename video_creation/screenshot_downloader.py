@@ -269,7 +269,7 @@ def get_screenshots_of_reddit_posts(reddit_object: dict, screenshot_num: int):
                     else:
                         try:
                             page.wait_for_timeout(2000)
-                            page.evaluate("""
+                            page.evaluate(r"""
                                 const shredditCommentTree = document.querySelector('shreddit-comment-tree');
                                 if (shredditCommentTree) {
                                     const shredditComment = shredditCommentTree.querySelector('shreddit-comment');
